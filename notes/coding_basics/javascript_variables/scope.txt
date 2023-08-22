@@ -1,0 +1,3 @@
+The scope a function inclues:
+  1. The function's arguments
+  2. any local variables declared within 

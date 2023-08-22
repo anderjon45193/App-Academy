@@ -1,0 +1,4 @@
+global - variables accessible practically anywhere
+var - functionnaly-scoped variables
+let - block-scoped variables
+const - Constant variables will not be re-declared or re-assigned and also are block scoped
