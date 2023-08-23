@@ -63,3 +63,6 @@ p [1, 3, 5].one? { |el| el.even? } # => false
 [0, 0].one? # => false
 [nil, nil].one? # => false
 [].one? # => false
+
+# With a block given and no argument, calls the block with each
+# element in self; returns true if the block 
