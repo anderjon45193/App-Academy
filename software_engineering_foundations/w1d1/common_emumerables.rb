@@ -66,3 +66,52 @@ p [1, 3, 5].one? { |el| el.even? } # => false
 
 # With a block given and no argument, calls the block with each
 # element in self; returns true if the block 
+
+# count
+# return a number representing the count of the elements that result in
+# true when passed into the block
+p [1, 2, 3, 4, 5, 6].count { |el| el.even? } # => 3
+p [1, 3, 5].count { |el| el.even? } # => 0
+
+# Returns the number of elements
+# If an argument is given, counts the number of elements which equal obj using ==.
+# If a block is given, counts the number of elements for which the block returns
+# a true value
+ary = [1, 2, 4, 2]
+
+ary.count # => 4
+ary.count(2) # => 2
+ary.count { |x| x%2 == 0 } # => 3
+
+# Sum
+# return the total sum of all elements
+p [1, -3, 5].sum # => 3
+
+# If a block is given, the block is applied to each element before addition
+# If ary is empty, it returns init
+# sum(init=0) => number
+# sum(init=0) {|e| expr } => number
+[].sum # => 0
+[].sum(0.0) # => 0.0
+[1, 2, 3].sum # => 6
+[3, 5.5].sum # => 8.5
+[2.5, 3.0].sum(0.0) { |e| e * e } # => 15.25
+[Object.new].sum  # => TypeError
+
+# Obtaining arithmetic meaning using sum method!
+mean = ary.sum(0.0) / ary.length
+
+# Sum method can be used for non-numeric objects by explicit init argument
+["a", "b", "c"].sum("") # => "abc"
+[[1], [[2]], [3]].sum([]) # => [1, [2], 3]
+
+
+# Max and min
+# Return the maximum or minimum element
+p [1, -3, 5].min # => -3
+p [1, -3, 5].max # => 5
+p [].max # => nil
+
+ary = %w(albatross dog horse)
+ary.min # => "albatross"
+ary.min { |a, b| a.length <=> b.length } # => "dog"
