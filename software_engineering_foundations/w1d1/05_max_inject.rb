@@ -1,7 +1,7 @@
 # Write a method, max_inject(arr), that accepts any amount of numbers arguments and returns
 # the largest number. Solve this using the built-in inject.
 def max_inject(*arr)
-  arr.inject { |acc, number| acc.length <=> number.length }
+  arr.inject { |acc, el| el > acc ? el : acc }
 end 
   
 
